@@ -1,8 +1,9 @@
 <script setup>
 import Header from './components/Header.vue';
 import Balance from './components/Balance.vue';
-import {ref, computed} from 'vue'
 import IncomeExpense from './components/IncomeExpense.vue';
+import AddTransaction from './components/AddTransaction.vue';
+import {ref, computed} from 'vue'
 
 const transactions = ref([
 {id: 1, text:'Paycheck', amount: 700.00},
@@ -41,6 +42,7 @@ const moneyOut = computed(()=>{
 <div class="container">
   <Balance :total="sum"></Balance>
   <IncomeExpense :income ="moneyIn" :expense="-moneyOut"></IncomeExpense>
+  <AddTransaction></AddTransaction>
 </div>
 
 
